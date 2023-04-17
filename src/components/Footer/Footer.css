@@ -1,0 +1,49 @@
+/*Footer*/
+.footer-section {
+    background-color: black;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.social-img {
+    display: flex;
+}
+
+.social-img img {
+    height: 30px;
+    width: 30px;
+
+}
+
+.linkdin,
+.youtube {
+    margin-left: 10px;
+}
+
+.number-ad:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.email-ad:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.useful-link-item:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+@media screen and (max-width:577px) {
+
+    .footer {
+        flex-direction: column-reverse;
+        row-gap: 20px;
+    }
+
+}
