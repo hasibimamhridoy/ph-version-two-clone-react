@@ -7,7 +7,7 @@ const Home = () => {
   console.log(user);
   return (
     <div>
-      <header className="headerContainer h-screen bg-red-400">
+      <header className="headerContainer h-screen">
         <h1 className="header-title">
           Learn Effectively That Will Take You <br /> Towards Your Goal
         </h1>

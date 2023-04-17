@@ -1,10 +1,12 @@
 import React, { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../providers/AuthProviders/AuthProviders";
 
 const Register = () => {
   const { createUser } = useContext(AuthContext);
-  const [error, setError] = useState("");
+  const [isError, setError] = useState("");
+
+  const navigate = useNavigate()
 
   const handleRegister = (e) => {
     e.preventDefault();
@@ -13,8 +15,9 @@ const Register = () => {
     const password = e.target.password.value;
     const confirmPassword = e.target.confirmPassword.value;
 
-    if (!password === confirmPassword) {
-      return setError("Password doesnt match");
+    if (password != confirmPassword) {
+      setError("Password doesnt match");
+      return
     }
 
     createUser(email, password)
@@ -22,18 +25,21 @@ const Register = () => {
         console.log(result.user);
         const user = result.user
           e.target.reset()
+          navigate('/modules')
+          
       })
       .catch((error) => {
         console.log(error.message);
+        setError(error.message.slice(9,100))
       });
   };
 
 
   return (
-    <div className="registerContainer pt-10 pb-10 pl-24 h-fit px-5 bg-[#0f0317] ">
+    <div className="registerContainer pt-10 pb-10 lg:pl-24 h-fit px-5 bg-[#0f0317] ">
       <h1 className="text-6xl text-white  mb-10">Sign Up</h1>
 
-      <div className=" w-full bg-[#070824] max-w-[40%]  rounded-lg shadow sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700">
+      <div className=" w-full bg-[#070824] lg:max-w-[40%]  rounded-lg shadow sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700">
         <form onSubmit={handleRegister} className="space-y-5 ">
           <div>
             <input
@@ -75,6 +81,7 @@ const Register = () => {
               required
             />
           </div>
+          <h1 className="text-red-500 font-bold">{isError}</h1>
           <div className="flex items-start">
             <div className="flex items-start">
               <div className="flex items-center h-5">

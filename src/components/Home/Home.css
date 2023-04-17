@@ -1,5 +1,5 @@
 .headerContainer{
-    background-image: url('header_background_images.jpg');
+    background-image: url('/public/header_background_images.jpg');
 }
 
 .heading-text {

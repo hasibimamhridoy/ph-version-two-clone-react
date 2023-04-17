@@ -25,6 +25,8 @@ import AuthProviders from "./providers/AuthProviders/AuthProviders";
 import Register from "./components/LoginRegister/Register/Register";
 import Login from "./components/LoginRegister/Login/Login";
 import PrivateRoutes from "./routes/PrivateRoutes/PrivateRoutes";
+import About from "./components/About/About";
+import Success from "./components/Success/Success";
 
 function App() {
   const router = createBrowserRouter([
@@ -71,6 +73,16 @@ function App() {
         {
           path: "/login",
           element: <Login></Login>,
+          
+        },
+        {
+          path: "/about",
+          element: <About></About>,
+          
+        },
+        {
+          path: "/success",
+          element: <Success></Success>,
           
         },
         {

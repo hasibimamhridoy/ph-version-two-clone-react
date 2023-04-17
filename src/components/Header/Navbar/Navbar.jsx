@@ -127,12 +127,12 @@ const Navbar = () => {
                   <li>Course Details</li>
                 </NavLink>
 
-                {user ? "" : <li>About Us</li>}
+                {user ? "" : <Link to='/about'><li>About Us</li></Link>}
 
                 {user && <li>Support</li>}
-                <li>Blog</li>
+                <Link to='/blogs'><li>Blog</li></Link>
 
-                {user ? "" : <li>Success</li>}
+                {user ? "" : <Link to='/success'><li>Success</li></Link>}
                 {user && <li>My Classes</li>}
               </ul>
             </div>

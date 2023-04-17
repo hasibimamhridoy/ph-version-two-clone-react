@@ -1,13 +1,13 @@
 import React from 'react';
 
-const Blogs = () => {
+const Success = () => {
     return (
         <div>
             <div className='h-screen flex justify-center items-center text-white lg:text-6xl tex-3xl bg-[#0f0317]'>
-            Blogs page
+            Success page
         </div>
         </div>
     );
 };
 
-export default Blogs;
+export default Success;
